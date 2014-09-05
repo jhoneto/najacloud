@@ -14,4 +14,13 @@ FactoryGirl.define do
     organizacao_id 2
     password '12345678'
   end
+  
+  factory :usuario_sem_acesso, class: Usuario do
+    nome 'Usuario 3'
+    email 'usuario3@teste.com'
+    username 'usuario3'
+    organizacao_id 1
+    password '12345678'
+  end
+
 end

@@ -55,7 +55,7 @@ gem 'font-awesome-rails', '~> 4.1.0.0'
 gem 'pundit', '~> 0.3.0'
 
 #Log all changes to your models
-
+gem 'paper_trail', '~> 3.0.5'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'

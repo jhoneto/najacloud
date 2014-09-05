@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
   def pundit_user
     current_usuario
   end
+  
+  def user_for_paper_trail
+    current_usuario
+  end
 
   protected
     def autorizar_acao

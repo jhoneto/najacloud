@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :perfil do
+    nome "Admin"
+    organizacao_id 1
   end
 end

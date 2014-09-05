@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'simplecov'
 require 'simplecov-rcov'
+require "pundit/rspec"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -12,7 +13,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
-ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+#ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 SimpleCov.start
 SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
@@ -48,4 +49,25 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods 
   
   config.include Devise::TestHelpers, :type => :controller
+  
+  config.before(:each, :type => :controller) do
+    
+  end
 end
+
+
+Spec::Runner.configure do |config|
+  config.before(:each) do
+    @organizacao = create(:organizacao)
+    @organizacao2 = create(:organizacao_2)
+    @usuario = create(:usuario, organizacao_id: @organizacao.id)
+    @usuario_sem_acesso = create(:usuario_sem_acesso, organizacao_id: @organizacao.id)
+    #Associção dos acesso ao usuario
+    @perfil = create(:perfil, organizacao_id: @organizacao.id)
+    Direito.all.each do |direito|
+      PerfilDireito.associar(@organizacao.id, direito.id, @perfil.id)
+    end
+    UsuarioPerfil.create(organizacao_id: @organizacao.id, usuario_id: @usuario.id, perfil_id: @perfil.id)
+  end
+end
+
