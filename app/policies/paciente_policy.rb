@@ -1,0 +1,3 @@
+class PacientePolicy < NajacloudPolicy
+  
+end

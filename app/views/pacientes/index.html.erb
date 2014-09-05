@@ -1,0 +1,27 @@
+<% content_for :cabecalho do %>
+Pacientes
+<% end %>
+
+<p>
+<%= link_to 'Incluir', new_paciente_path, class: "btn btn-primary" %>
+</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= form_tag listar_pacientes_path, method: :get, role: "form", class: "form-inline", remote: true do %>
+      <div class="form-group">
+        <label>Nome</label>
+        <%= text_field_tag :por_nome, params[:por_nome], class: "form-control" %>
+      </div>
+       <%= submit_tag "Filtrar", class: "btn btn-primary"%>
+    <% end %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div id="lista_pacientes">
+      <%= render 'lista', pacientes: @pacientes %>
+    </div>
+  </div>
+</div>
