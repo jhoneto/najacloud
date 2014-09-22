@@ -22,5 +22,5 @@ class PacientesController < InheritedResources::Base
     params.permit(paciente: [:nome, :ativo, :sexo, :data_nascimento, :acao])
   end
 
-  
+
 end

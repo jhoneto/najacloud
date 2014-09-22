@@ -57,6 +57,12 @@ gem 'pundit', '~> 0.3.0'
 #Log all changes to your models
 gem 'paper_trail', '~> 3.0.5'
 
+#New Relic, analise de performace do site no geral
+gem 'newrelic_rpm', '~> 3.9.4.245'
+
+#Log de atividades
+gem 'browser'
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'factory_girl_rails', '~> 4.2.1'
