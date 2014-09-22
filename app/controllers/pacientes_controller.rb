@@ -14,11 +14,13 @@ class PacientesController < InheritedResources::Base
   
   def update
     update! do |format|
-      format.html { (params[:acao] == "salvar_e_novo") ? redirect_to(new_paciente_path) : redirect_to(pacientes_path) }
+      format.html { (params[:acao] == 'salvar_e_novo') ? redirect_to(new_paciente_path) : redirect_to(pacientes_path) }
     end
   end
 
   def permitted_params
     params.permit(paciente: [:nome, :ativo, :sexo, :data_nascimento, :acao])
   end
+
+  
 end

@@ -23,7 +23,12 @@ class ApplicationController < ActionController::Base
 
   protected
     def autorizar_acao
+      set_unidade_do_usuario
       authorize controller_name.classify.constantize
+    end
+
+    def set_unidade_do_usuario
+      current_usuario.unidade_id = nil
     end
 
     def set_organizacao
@@ -41,6 +46,6 @@ class ApplicationController < ActionController::Base
     def user_not_authorized(exception)
       policy_name = exception.policy.class.to_s.underscore
       flash[:error] = "Acesso não permitido"
-      redirect_to(root_path)
+      redirect_to(:back)
     end
 end

@@ -26,7 +26,7 @@ class NajacloudPolicy < ApplicationPolicy
   
   def liberado?(acao)
     #user.acesso_liberado?(obter_classe, acao)
-    Direito.tem_acesso?(@user.id, obter_classe, acao)
+    Direito.tem_acesso?(@user.id, @user.unidade_id, obter_classe, acao)
   end
   
   def obter_classe

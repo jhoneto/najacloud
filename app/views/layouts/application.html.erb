@@ -60,6 +60,19 @@
 
     <div id="page-wrapper">
       <div class="row">
+        <p>
+          <div id="notice" style="<%= 'display:none' unless flash[:notice] %>" class="alert alert-success fade in" data-alert="alert">
+            <a class="close" data-dismiss='alert' href="#">×</a>
+            <p><%= flash[:notice] %></p>
+          </div>
+        
+          <div id="error" style="<%= 'display:none' unless flash[:error] %>" class="alert alert-danger fade in" data-alert="alert">
+            <a class="close" data-dismiss='alert' href="#">×</a>
+            <p><%= flash[:error] %></p>
+          </div>
+        </p>
+      </div>
+      <div class="row">
           <div class="col-lg-12">
               <h1 class="page-header"><%= yield :cabecalho %></h1>
           </div>

@@ -6,4 +6,5 @@ class Paciente < ActiveRecord::Base
   scope :por_nome, lambda { |nome| where("nome ilike ?", "%#{nome}%")}
 
   validates_presence_of :nome
+  validates_presence_of :sexo
 end

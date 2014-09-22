@@ -50,13 +50,7 @@ RSpec.configure do |config|
   
   config.include Devise::TestHelpers, :type => :controller
   
-  config.before(:each, :type => :controller) do
-    
-  end
-end
-
-
-Spec::Runner.configure do |config|
+  #VER COMO OTIMIZAR ISSO!!!
   config.before(:each) do
     @organizacao = create(:organizacao)
     @organizacao2 = create(:organizacao_2)
@@ -70,4 +64,5 @@ Spec::Runner.configure do |config|
     UsuarioPerfil.create(organizacao_id: @organizacao.id, usuario_id: @usuario.id, perfil_id: @perfil.id)
   end
 end
+
 
