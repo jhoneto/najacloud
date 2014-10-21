@@ -177,6 +177,9 @@ GEM
       multi_json (~> 1.0)
       rubyzip (< 1.0.0)
       websocket (~> 1.0.4)
+    simple_form (3.0.2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     simplecov (0.8.2)
       docile (~> 1.1.0)
       multi_json
@@ -246,6 +249,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.2)
   sdoc
   selenium-webdriver (~> 2.35.1)
+  simple_form
   simplecov (~> 0.8.2)
   simplecov-rcov (~> 0.2.3)
   turbolinks
