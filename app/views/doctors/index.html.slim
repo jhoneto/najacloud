@@ -1,4 +1,12 @@
 h1 Teste
 - if @doctors.any?
+  table.table.table-striped
+    tbody
+      - @doctors.each do |doctor|
+        tr
+          td = doctor.name
+          td = doctor.phone
+          td = l(doctor.birthdate)
+
 - else
   p Sem médico cadastrado.

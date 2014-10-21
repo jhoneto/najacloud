@@ -1,6 +1,6 @@
 class CreateDoctores < ActiveRecord::Migration
   def change
-    create_table :doctores do |t|
+    create_table :doctors do |t|
       t.string :name
       t.date :birthdate
       t.string :phone

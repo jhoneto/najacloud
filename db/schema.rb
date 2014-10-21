@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141021175318) do
     t.datetime "updated_at"
   end
 
-  create_table "doctores", force: true do |t|
+  create_table "doctors", force: true do |t|
     t.string   "name"
     t.date     "birthdate"
     t.string   "phone"
