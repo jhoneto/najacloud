@@ -1,5 +1,5 @@
 class CreateLogAtividades < ActiveRecord::Migration
-  using(:log)
+  # using(:log)
   def change
     create_table :log_atividades do |t|
       t.integer       :organizacao_id, null: false

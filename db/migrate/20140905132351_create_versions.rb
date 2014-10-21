@@ -1,5 +1,5 @@
 class CreateVersions < ActiveRecord::Migration
-  using(:log)
+  # using(:log)
   def change
     create_table :versions do |t|
       t.string   :item_type, :null => false

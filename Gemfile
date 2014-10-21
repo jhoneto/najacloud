@@ -34,7 +34,7 @@ end
 
 
 #Connection with multiple databases
-gem 'ar-octopus', '0.8.3', :require => 'octopus'
+# gem 'ar-octopus', '0.8.3', :require => 'octopus'
 
 #Authentication
 gem 'devise', '~> 3.3.0'

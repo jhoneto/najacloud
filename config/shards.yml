@@ -9,8 +9,6 @@ octopus:
       encoding: unicode
       database: najacloud_admin_development
       pool: 5
-      username: postgres
-      password: postgres
       host: localhost
       port: 5432
     log:
@@ -18,8 +16,6 @@ octopus:
       encoding: unicode
       database: najacloud_log_development
       pool: 5
-      username: postgres
-      password: postgres
       host: localhost
       port: 5432
   test:
@@ -28,8 +24,6 @@ octopus:
       encoding: unicode
       database: najacloud_admin_test
       pool: 5
-      username: postgres
-      password: postgres
       host: localhost
       port: 5432
     log:
@@ -37,8 +31,6 @@ octopus:
       encoding: unicode
       database: najacloud_log_test
       pool: 5
-      username: postgres
-      password: postgres
       host: localhost
       port: 5432
   production:
@@ -47,7 +39,5 @@ octopus:
       encoding: unicode
       database: najacloud_admin_production
       pool: 5
-      username: postgres
-      password: postgres
       host: localhost
       port: 5432
