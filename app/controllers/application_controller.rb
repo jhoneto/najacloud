@@ -3,21 +3,21 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  
+
   self.responder = ApplicationResponder
   respond_to :html
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-  before_action :authenticate_usuario!, :set_organizacao
-  before_action :autorizar_acao, unless: :devise_controller?
-  after_action :registrar_atividade, unless: :devise_controller?
-  
+  # protect_from_forgery with: :exception
+  # before_action :authenticate_usuario!, :set_organizacao
+  # before_action :autorizar_acao, unless: :devise_controller?
+  # after_action :registrar_atividade, unless: :devise_controller?
+
   def pundit_user
     current_usuario
   end
-  
+
   def user_for_paper_trail
     current_usuario
   end
@@ -50,9 +50,9 @@ class ApplicationController < ActionController::Base
                              controller_name.to_s,
                              action_name)
     end
-    
+
   private
-    
+
     def user_not_authorized(exception)
       policy_name = exception.policy.class.to_s.underscore
       flash[:error] = "Acesso não permitido"
