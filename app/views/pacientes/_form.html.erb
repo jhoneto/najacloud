@@ -1,4 +1,4 @@
-<%= form_for(@paciente, html: {role: "form"}) do |f| %>
+<%= simple_form_for(@pacient, wrapper: :vertical_form) do |f| %>
   <%= render "comum/erro", model: @paciente %>
 
   <div class="actions">
@@ -7,51 +7,11 @@
     <%= link_to "Cancelar", pacientes_path, class: "btn btn-danger" %>
   </div>
   <br>
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="form-group has-feedback">
-        <label>Nome</label>
-        <%= f.text_field :nome, class: "form-control" %>
-        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
-      </div>
-    </div>
-  </div>
+  <%= f.input :nome %>
 
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="checkbox">
-        <label>
-          <%= f.check_box :ativo %>
-          Ativo
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-6">
-      <label>Sexo</label>
-      <div class="radio">
-        <label>
-          <%= f.radio_button :sexo, 'M'%>
-          Masculino
-        </label>
-        <label>
-          <%= f.radio_button :sexo, 'F'%>
-          Feminino
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="form-group">
-        <label>Data nascimento</label>
-        <%= f.text_field :data_nascimento, 'data-behaviour' => 'datepicker', class: "form-control" %>
-      </div>
-    </div>
-  </div>
+  <%= f.input :ativo, as: :select, prompt: false %>
+  <%= f.select :sexo, ['M', 'F']%>
+  <%= f.input :data_nascimento, 'data-behaviour' => 'datepicker', class: "form-control" %>
 
   <div class="actions">
     <button name="acao" type="submit" class="btn btn-primary" value="salvar">Salvar</button>

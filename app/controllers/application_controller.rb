@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  # protect_from_forgery with: :exception
+
+  protect_from_forgery with: :exception
+
   # before_action :authenticate_usuario!, :set_organizacao
   # before_action :autorizar_acao, unless: :devise_controller?
   # after_action :registrar_atividade, unless: :devise_controller?
@@ -33,6 +35,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_organizacao
+      params[:por_organizacao]=1
       params[:por_organizacao] = current_usuario.organizacao_id if current_usuario
     end
 
