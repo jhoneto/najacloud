@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.9'
+gem 'rails', '4.1.6'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -58,10 +58,12 @@ gem 'pundit', '~> 0.3.0'
 gem 'paper_trail', '~> 3.0.5'
 
 #New Relic, analise de performace do site no geral
-gem 'newrelic_rpm', '~> 3.9.4.245'
+# gem 'newrelic_rpm', '~> 3.9.4.245'
 
 #Log de atividades
 gem 'browser'
+
+gem 'byebug'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
