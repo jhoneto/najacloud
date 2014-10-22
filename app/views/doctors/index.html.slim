@@ -16,14 +16,16 @@ img src="/assets/fototeste.jpg"
 
 hr/
 
-- if @doctors.any?
-  table class='table table-striped'
-    tbody
-      - @doctors.each do |doctor|
-        tr
-          td = doctor.name
-          td = doctor.phone
-          td = l(doctor.birthdate)
-          td = doctor.clinic.name
-- else
-  p Sem médico cadastrado.
+- cache 'lista-doutores', expires_in: 20.seconds do
+  - if @doctors.any?
+    table class='table table-striped'
+      tbody
+        - @doctors.each do |doctor|
+          - doctor = DoctorPresenter.new(doctor)
+          tr
+            td = doctor.name
+            td = doctor.phone
+            td = doctor.birthdate
+            td = doctor.clinic.name
+  - else
+    p Sem médico cadastrado.

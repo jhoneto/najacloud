@@ -4,7 +4,6 @@ class DoctorsController < InheritedResources::Base
 
   def index
     @doctors = apply_scopes(Doctor.includes(:clinic)).all
-    expires_in 1.minute, :public => true
   end
 
   def create
