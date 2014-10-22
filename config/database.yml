@@ -53,7 +53,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: najacloud_production
+  database: najacloud_development
   pool: 5
-  username: najacloud
-  password:
+

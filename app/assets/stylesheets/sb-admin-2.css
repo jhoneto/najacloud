@@ -8,6 +8,9 @@ body {
     background-color: #f8f8f8;
 }
 
+.navbar-header {
+    background: transparent url('pasta1/fotopasta.jpg') no-repeat 0 0;
+}
 #wrapper {
     width: 100%;
 }
