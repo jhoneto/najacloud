@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021175318) do
+ActiveRecord::Schema.define(version: 20141022170517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clinics", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "doctors_count"
+  end
 
   create_table "direitos", force: true do |t|
     t.string   "classe",     null: false
@@ -31,7 +38,10 @@ ActiveRecord::Schema.define(version: 20141021175318) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "clinic_id"
   end
+
+  add_index "doctors", ["clinic_id"], name: "index_doctors_on_clinic_id", using: :btree
 
   create_table "log_atividades", force: true do |t|
     t.integer  "organizacao_id", null: false

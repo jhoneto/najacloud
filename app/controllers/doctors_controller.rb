@@ -2,6 +2,10 @@ class DoctorsController < InheritedResources::Base
 
   has_scope :by_name
 
+  def index
+    @doctors = apply_scopes(Doctor.includes(:clinic)).all
+  end
+
   def create
     create! do |success, failure|
       success.html { redirect_to doctors_path }

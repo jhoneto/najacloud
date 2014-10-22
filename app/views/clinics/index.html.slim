@@ -1,0 +1,10 @@
+h1 Clinicas
+
+- if @clinics.any?
+  table class='table table-striped'
+    tbody
+      - @clinics.each do |clinic|
+        tr
+          td = clinic.name
+          td = clinic.doctors.size
+
