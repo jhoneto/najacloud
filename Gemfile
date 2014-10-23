@@ -87,9 +87,12 @@ end
 group :test do
   gem 'faker', '~> 1.1.2'
   gem 'capybara', '2.4.4'
+
+  gem 'capybara-screenshot'
   gem 'database_cleaner', '~> 1.0.1'
   gem 'launchy', '~> 2.3.0'
   gem 'selenium-webdriver', '~> 2.35.1'
+  gem 'poltergeist'
   gem 'mocha'
   gem 'simplecov', '~> 0.8.2'
   gem 'simplecov-rcov', '~> 0.2.3'

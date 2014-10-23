@@ -1,6 +1,8 @@
 = simple_form_for([:public, @doctor]) do |f|
   = f.input :name
   = f.input :birthdate
-  = f.input :phone
+  a.btn.js-show-phone-field.cpy-show-phone Preencher telefone
+  .js-phone-wrapper style="display: none;"
+    = f.input :phone
   = f.association :clinic
   = f.submit

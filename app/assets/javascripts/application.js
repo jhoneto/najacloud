@@ -20,3 +20,9 @@
 function formatar_data(){
   $('[data-behaviour~=datepicker]').datepicker({"format": "dd/mm/yyyy" ,"language": "pt-BR", "autoclose": true});
 };
+
+$(document).ready(function() {
+  $('.js-show-phone-field').click(function() {
+    $(".js-phone-wrapper").show();
+  });
+});
