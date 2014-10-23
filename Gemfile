@@ -75,6 +75,8 @@ gem 'byebug'
 
 group :development, :test do
   gem 'rspec-rails', '3.1.0'
+  gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'factory_girl_rails', '~> 4.2.1'
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-rails', '~> 1.1.1'
@@ -84,7 +86,7 @@ end
 
 group :test do
   gem 'faker', '~> 1.1.2'
-  gem 'capybara', '~> 2.1.0'
+  gem 'capybara', '2.4.4'
   gem 'database_cleaner', '~> 1.0.1'
   gem 'launchy', '~> 2.3.0'
   gem 'selenium-webdriver', '~> 2.35.1'
