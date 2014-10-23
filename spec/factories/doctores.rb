@@ -5,5 +5,6 @@ FactoryGirl.define do
     name "MyString"
     birthdate "2014-10-21"
     phone "MyString"
+    clinic
   end
 end

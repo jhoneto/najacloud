@@ -1,5 +1,6 @@
 class Doctor < ActiveRecord::Base
   validates :name, presence: true
+  validates :clinic_id, presence: true
 
   belongs_to :clinic, counter_cache: true
 

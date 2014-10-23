@@ -4,6 +4,7 @@ img src="/assets/fototeste.jpg"
 
 = render(partial: 'public/doctors/_index/filters')
 
+= link_to "Adicionar", new_public_doctor_path
 - cache 'lista-doutores', expires_in: 20.seconds do
   - if @doctors.any?
     table class='table table-striped'
@@ -16,4 +17,4 @@ img src="/assets/fototeste.jpg"
             td = doctor.birthdate
             td = doctor.clinic.name
   - else
-    p Sem médico cadastrado.
+    p Não existem médicos cadastrados.

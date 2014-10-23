@@ -8,12 +8,12 @@ class Public::DoctorsController < Public::BaseController
 
   def create
     create! do |success, failure|
-      success.html { redirect_to doctors_path }
+      success.html { redirect_to public_doctors_path }
     end
   end
 
   def permitted_params
-    params.permit(doctor: [:name, :birthdate, :phone])
+    params.permit(doctor: [:name, :birthdate, :phone, :clinic_id])
   end
 
   def index_json
