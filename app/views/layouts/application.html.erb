@@ -3,7 +3,6 @@
 <head>
   <title>Najacloud</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    'sb-admin-2', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -65,7 +64,7 @@
             <a class="close" data-dismiss='alert' href="#">×</a>
             <p><%= flash[:notice] %></p>
           </div>
-        
+
           <div id="error" style="<%= 'display:none' unless flash[:error] %>" class="alert alert-danger fade in" data-alert="alert">
             <a class="close" data-dismiss='alert' href="#">×</a>
             <p><%= flash[:error] %></p>
