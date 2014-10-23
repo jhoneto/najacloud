@@ -4,8 +4,12 @@ Najacloud::Application.routes.draw do
       get 'listar'
     end
   end
-  resources :doctors
-  resources :clinics
+
+  namespace :public, path: '/' do
+    resources :doctors
+    resources :clinics
+  end
+
   root "home#index"
   devise_for :usuarios
   # The priority is based upon order of creation: first created -> highest priority.

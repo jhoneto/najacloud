@@ -1,7 +1,7 @@
 h1 Teste
 img src="/assets/fototeste.jpg"
 = image_tag("fototeste.jpg")
-= form_tag doctors_path, method: :get, class: 'form-horizontal' do
+= form_tag public_doctors_path, method: :get, class: 'form-horizontal' do
   .row
     .col-sm-3
       = label_tag :q, 'Nome', class: 'control-label no-left-padding'

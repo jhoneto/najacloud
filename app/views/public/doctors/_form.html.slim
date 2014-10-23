@@ -1,4 +1,4 @@
-= simple_form_for(@doctor) do |f|
+= simple_form_for([:public, @doctor]) do |f|
   = f.input :name
   = f.input :birthdate
   = f.input :phone

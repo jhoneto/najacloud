@@ -1,5 +1,5 @@
-class DoctorsController < InheritedResources::Base
-
+class Public::DoctorsController < Public::BaseController
+  inherit_resources
   has_scope :by_name
 
   def index
