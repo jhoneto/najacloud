@@ -6,7 +6,11 @@ Najacloud::Application.routes.draw do
   end
 
   namespace :public, path: '/' do
-    resources :doctors
+    resources :doctors do
+      collection do
+        get :index_json
+      end
+    end
     resources :clinics
   end
 

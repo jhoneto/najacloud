@@ -45,24 +45,24 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-  
-  config.include FactoryGirl::Syntax::Methods 
-  
+
+  config.include FactoryGirl::Syntax::Methods
+
   config.include Devise::TestHelpers, :type => :controller
-  
+
   #VER COMO OTIMIZAR ISSO!!!
-  config.before(:each) do
-    @organizacao = create(:organizacao)
-    @organizacao2 = create(:organizacao_2)
-    @usuario = create(:usuario, organizacao_id: @organizacao.id)
-    @usuario_sem_acesso = create(:usuario_sem_acesso, organizacao_id: @organizacao.id)
-    #Associção dos acesso ao usuario
-    @perfil = create(:perfil, organizacao_id: @organizacao.id)
-    Direito.all.each do |direito|
-      PerfilDireito.associar(@organizacao.id, direito.id, @perfil.id)
-    end
-    UsuarioPerfil.create(organizacao_id: @organizacao.id, usuario_id: @usuario.id, perfil_id: @perfil.id)
-  end
+  # config.before(:each) do
+  #   @organizacao = create(:organizacao)
+  #   @organizacao2 = create(:organizacao_2)
+  #   @usuario = create(:usuario, organizacao_id: @organizacao.id)
+  #   @usuario_sem_acesso = create(:usuario_sem_acesso, organizacao_id: @organizacao.id)
+  #   #Associção dos acesso ao usuario
+  #   @perfil = create(:perfil, organizacao_id: @organizacao.id)
+  #   Direito.all.each do |direito|
+  #     PerfilDireito.associar(@organizacao.id, direito.id, @perfil.id)
+  #   end
+  #   UsuarioPerfil.create(organizacao_id: @organizacao.id, usuario_id: @usuario.id, perfil_id: @perfil.id)
+  # end
 end
 
 

@@ -16,4 +16,12 @@ class Public::DoctorsController < Public::BaseController
     params.permit(doctor: [:name, :birthdate, :phone])
   end
 
+  def index_json
+    render json: get_doctors
+  end
+
+  private
+  def get_doctors
+    Doctor.all
+  end
 end
