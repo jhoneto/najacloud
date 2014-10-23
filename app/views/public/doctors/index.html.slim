@@ -1,20 +1,8 @@
 h1 Teste
 img src="/assets/fototeste.jpg"
 = image_tag("fototeste.jpg")
-= form_tag public_doctors_path, method: :get, class: 'form-horizontal' do
-  .row
-    .col-sm-3
-      = label_tag :q, 'Nome', class: 'control-label no-left-padding'
-      = text_field_tag 'by_name'
-    .col-sm-3
-      = label_tag :q, 'Telefone', class: 'control-label no-left-padding'
-      = text_field_tag 'by_phone'
-    .col-sm-3
-      = label_tag :q, 'Dt. Nascimento', class: 'control-label no-left-padding'
-      = text_field_tag 'by_birthdate'
-      = submit_tag 'Filtrar'
 
-hr/
+= render(partial: 'public/doctors/_index/filters')
 
 - cache 'lista-doutores', expires_in: 20.seconds do
   - if @doctors.any?

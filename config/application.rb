@@ -23,5 +23,7 @@ module Najacloud
     config.i18n.enforce_available_locales = false
     config.i18n.available_locales = ["pt-BR"]
     config.i18n.default_locale = :'pt-BR'
+    config.action_controller.include_all_helpers = false
+
   end
 end

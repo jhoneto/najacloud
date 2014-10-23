@@ -1,0 +1,14 @@
+= form_tag public_doctors_path, method: :get, class: 'form-horizontal' do
+  .row
+    .col-sm-3
+      = label_tag :q, 'Nome', class: 'control-label no-left-padding'
+      = text_field_tag 'by_name'
+    .col-sm-3
+      = label_tag :q, 'Telefone', class: 'control-label no-left-padding'
+      = text_field_tag 'by_phone'
+    .col-sm-3
+      = label_tag :q, 'Dt. Nascimento', class: 'control-label no-left-padding'
+      = text_field_tag 'by_birthdate'
+      = submit_tag 'Filtrar'
+
+hr/
